@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="upotussam.list">
+      <field name="name">upotussam list</field>
+      <field name="model">upotussam.upotussam</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="upotussam.action_window">
+      <field name="name">upotussam window</field>
+      <field name="res_model">upotussam.upotussam</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="upotussam.action_server">
+      <field name="name">upotussam server</field>
+      <field name="model_id" ref="model_upotussam_upotussam"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="upotussam" id="upotussam.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="upotussam.menu_1" parent="upotussam.menu_root"/>
+    <menuitem name="Menu 2" id="upotussam.menu_2" parent="upotussam.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="upotussam.menu_1_list" parent="upotussam.menu_1"
+              action="upotussam.action_window"/>
+    <menuitem name="Server to list" id="upotussam" parent="upotussam.menu_2"
+              action="upotussam.action_server"/>
+    -->
+  </data>
+</odoo>

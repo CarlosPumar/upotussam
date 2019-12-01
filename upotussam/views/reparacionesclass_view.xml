@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+ <data>
+
+<record id="act_reparaciones" model="ir.actions.act_window">
+ <field name="name">Reparaciones Class</field>
+ <field name="res_model">upotussam.reparacionesclass</field>
+ <field name="view_type">form</field>
+ <field name="view_mode">form</field>
+ </record> 
+
+<record model="ir.ui.view" id="upotussam_reparacines_tree_view">
+	<field name="name">view_upotussam_reparaciones_tree</field>
+	<field name="model">upotussam.reparacionesclass</field>
+	<field name="arch" type="xml">
+		<tree string="tree_string">
+			<field name="descripcion" />
+			<field name="fechaInicio" />
+			<field name="fechaFin" />
+			<field name="garantia" />
+		</tree>
+	</field>
+</record>
+
+<!-- Calendar View -->
+<record model="ir.ui.view" id="view_upotussam_reparaciones_calendar">
+	<field name="name">view_upotussam_reparaciones_calendar</field>
+	<field name="model">upotussam.reparacionesclass</field>
+	<field name="type">calendar</field>
+	<field name="arch" type="xml">
+		<calendar string="Clases" color="descripcion" date_start="fechaInicio" date_stop="fechaFin" mode
+		="month">
+			<field name="descripcion" />
+			<field name="garantia"/>
+		</calendar>
+	</field>
+</record>
+
+
+
+<record model="ir.actions.act_window" id="upotussam.action_window">
+<field name="name">Reparaciones</field>
+<field name="res_model">upotussam.reparacionesclass</field>
+<field name="view_mode">tree,form,calendar</field>
+</record>
+	
+ <menuitem name="Upotussam" id="upotussam.menu_root"/>
+ <menuitem name="Reparaciones" id="upotussam.menu_reparaciones" parent="upotussam.menu_root"/>
+<menuitem name="Ver Reparaciones" id="upotussam.menu_reparaciones_ver_reparaciones" parent="upotussam.menu_reparaciones"
+action="upotussam.action_window"/>
+ </data>
+</odoo> 
+
