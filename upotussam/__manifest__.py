@@ -10,7 +10,7 @@
          de gestion de reparaciones y el de gestion de autobuses
     """,
 
-    'author': "grupo 14",
+    'author': "grupo14",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/11.0/odoo/addons/base/module/module_data.xml
@@ -22,11 +22,10 @@
     'depends': ['base'],
 
     # always loaded
-    'data': ['views/reparacionesclass_view.xml'], 
+    'data': ['views/driver_view.xml','views/autobus_view.xml','views/reparacionesclass_view.xml'], 
 
     # only loaded in demonstration mode
-    'demo': [
-    ],
+    'demo': ['demo/driver_demo.xml'],
     
     'application': True,
 

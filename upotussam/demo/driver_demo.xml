@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+	<data noupdate="0">
+		<record id="driver50" model="upotussam.driver">
+			<field name="dni">00000001A</field>
+			<field name="nombre">Juan</field>
+			<field name="apellidos">Tuzri For</field>
+			<field name="mail">juan@gmail.com</field>
+			<field name="fecha_nacimiento">16/12/2000</field> 
+			<field name="tipo_contrato">part-time</field>
+			<field name="carnet">00000001A</field>
+			<field name="turno">morning</field>
+		</record>
+		<record id="driver51" model="upotussam.driver">
+			<field name="dni">00000002B</field>
+			<field name="nombre">Maria</field>
+			<field name="apellidos">Unfavor Ahora</field>
+			<field name="mail">maria@gmail.com</field>
+			<field name="fecha_nacimiento">16/12/1975</field>
+			<field name="tipo_contrato">full-time</field>
+			<field name="carnet">00000001A</field>
+			<field name="turno">morning</field>
+		</record>
+		<record id="driver52" model="upotussam.driver">
+			<field name="dni">00000003C</field>
+			<field name="nombre">Aitor</field>
+			<field name="apellidos">Menta Peligrosa</field>
+			<field name="mail">aitor@gmail.com</field>
+			<field name="fecha_nacimiento">16/12/1989</field>
+			<field name="tipo_contrato">full-time</field>
+			<field name="carnet">00000001A</field>
+			<field name="turno">afternoon</field>
+		</record>
+		<record id="driver53" model="upotussam.driver">
+			<field name="dni">00000004D</field>
+			<field name="nombre">Lola</field>
+			<field name="apellidos">Mento Mucho</field>
+			<field name="mail">lola@gmail.com</field>
+			<field name="fecha_nacimiento">16/12/1990</field>
+			<field name="tipo_contrato">full-time</field>
+			<field name="carnet">00000001B</field>
+			<field name="turno">night</field>
+		</record>
+		<record id="driver54" model="upotussam.driver">
+			<field name="dni">00000005E</field>
+			<field name="nombre">Helena</field>
+			<field name="apellidos">Nito del Bosque</field>
+			<field name="mail">helena@gmail.com</field>
+			<field name="fecha_nacimiento">16/12/1994</field>
+			<field name="tipo_contrato">part-time</field>
+			<field name="carnet">00000001B</field>
+			<field name="turno">night</field>
+		</record>
+	</data>
+</odoo>

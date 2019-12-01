@@ -1,1 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="upotussam_autobus_form">
+			<field name="name">Autobuses</field>
+			<field name="model">upotussam.autobus</field>
+			<field name="arch" type="xml">
+				<form string="Formulario de autobuses">
+					<group string="Autobuses">
+						<field name="matricula" />
+						<field name="capacidad" />
+						<field name="estado" />
+						<field name="driver_id" />
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="upotussam_autobus_tree_view">
+			<field name="name">view_tussam_autobuses_tree</field>
+			<field name="model">upotussam.autobus</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="matricula" />
+					<field name="capacidad" />
+					<field name="estado" />
+					<field name="driver_id" />
+				</tree>
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="upotussam_autobuses_graph">
+			<field name="name">Autobuses</field>
+			<field name="model">upotussam.autobus</field>
+			<field name="arch" type="xml">
+				<graph string="Capacidad de cada autobús" type="bar">
+					<field name="matricula" type="row"/>
+					<field name="capacidad" type="measure"/>
+				</graph>
+			</field>
+		</record>	
+
+		<record id="act_autobus" model="ir.actions.act_window">
+			<field name="name">Autobuses</field>
+			<field name="res_model">upotussam.autobus</field>
+			<field name="view_mode">tree,form,graph</field>
+		</record>
+		
+
+		<menuitem name="Autobuses" id="upotussam_autobus_submenu" parent="upotussam"
+			sequence="100" />
+		<menuitem name="Ver autobuses" id="upotussam_autobus_submenu_2"
+			parent="upotussam_autobus_submenu" sequence="100" action="act_autobus" />
+	</data>
+</odoo> 

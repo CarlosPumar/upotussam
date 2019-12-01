@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="upotussam_driver_form">
+			<field name="name">Conductores</field>
+			<field name="model">upotussam.driver</field>
+			<field name="arch" type="xml">
+				<form string="Form of drivers">
+					<group string="drivers">
+						<group>
+							<field name="dni" />
+							<field name="nombre" />
+							<field name="apellidos" />
+						</group>
+						<group>
+							<field name="mail" />
+							<field name="fecha_nacimiento" />
+							<field name="tipo_contrato" />
+						</group>
+						<group>
+							<field name="carnet" />
+							<field name="turno" />
+							<field name="autobus_id" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="upotussam_driver_tree">
+			<field name="name">Conductores</field>
+			<field name="model">upotussam.driver</field>
+			<field name="arch" type="xml">
+				<tree string="List of drivers">
+					<field name="dni" />
+					<field name="nombre" />
+					<field name="apellidos" />
+					<field name="mail" />
+					<field name="fecha_nacimiento" />
+					<field name="tipo_contrato" />
+					<field name="carnet" />
+					<field name="turno" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- Search View -->
+		<record model="ir.ui.view" id="view_upotussam_driver_search">
+			<field name="name">view_upotussam_driver_search</field>
+			<field name="model">upotussam.driver</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="drivers">
+					<field name="dni" />
+					<field name="apellidos" />
+					<separator orientation="vertical" />
+					<group expand="0" string="Agrupar por…">
+						<filter name="group_by_fecha_nacimiento_year"
+							string="Año Nacimiento" domain="[]"
+							context="{'group_by':'fecha_nacimiento:year'}" />
+						<filter name="group_by_contrato" string="Contrato"
+							context="{'group_by':'tipo_contrato'}" />
+						<filter name="group_by_turno" string="Turno"
+							context="{'group_by':'turno'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record id="act_driver" model="ir.actions.act_window">
+			<field name="name">Upotussam Conductores</field>
+			<field name="res_model">upotussam.driver</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem id="upotussam" name="upotussam" action="act_driver" />
+		<menuitem name="Conductores" id="drivers_submenu"
+			parent="upotussam" sequence="100" />
+		<menuitem name="Ver Conductores" id="drivers_submenu_2"
+			parent="drivers_submenu" sequence="100" action="act_driver" />
+	</data>
+</odoo> 
