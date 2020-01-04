@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="upotussam_mecanico_form">
+			<field name="name">Mecanicos</field>
+			<field name="model">upotussam.mecanico</field>
+			<field name="arch" type="xml">
+				<form string="Form of mecanicos">
+					<group string="mecanicos">
+						<group>
+							<field name="dni" />
+							<field name="nombre" />
+							<field name="apellidos" />
+						</group>
+						<group>
+							<field name="mail" />
+							<field name="fecha_nacimiento" />
+							<field name="tipo_contrato" />
+						</group>
+						<group>
+							<field name="especialidad" />
+							<field name="centroDocente" />
+							<field name='taller_id'/>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="upotussam_mecanico_tree">
+			<field name="name">Mecanicos</field>
+			<field name="model">upotussam.mecanico</field>
+			<field name="arch" type="xml">
+				<tree string="List of mecanicos">
+					<field name="dni" />
+					<field name="nombre" />
+					<field name="apellidos" />
+					<field name="mail" />
+					<field name="fecha_nacimiento" />
+					<field name="tipo_contrato" />
+					<field name="especialidad" />
+					<field name="centroDocente" />
+					<field name='taller_id'/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="act_mecanico" model="ir.actions.act_window">
+			<field name="name">Upotussam Mecanicos</field>
+			<field name="res_model">upotussam.mecanico</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem id="upotussam" name="upotussam" action="act_mecanico" />
+		<menuitem name="Mecanicos" id="mecanicos_submenu"
+			parent="upotussam" sequence="100" />
+		<menuitem name="Ver Mecanicos" id="mecanicos_submenu_2"
+			parent="mecanicos_submenu" sequence="100" action="act_mecanico" />
+	</data>
+</odoo> 

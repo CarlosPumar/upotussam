@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 	<data>
-		<record model="ir.ui.view" id="upotussam_reparaciones_form_view">
+		<record model="ir.ui.view" id="upotussam_reparacion_form_view">
 			<field name="name">Reparaciones</field>
-			<field name="model">upotussam.reparacionesclass</field>
+			<field name="model">upotussam.reparacion</field>
 			<field name="arch" type="xml">
 				<form string="Form of repairs">
 					<group string="repairs">
@@ -18,14 +18,27 @@
 							<field name="garantia" />
 							<field name="autobus_id" />
 						</group>
+						<group>
+							<field name="piezas_ids" nolabel="1" colspan="4">
+								<tree>
+									<field name="nombre" />
+									<field name="precio" />
+								</tree>
+							</field>
+						</group>
+						<group>
+							<field name="mecanico_ids"/>
+						</group>
 					</group>
 				</form>
 			</field>
+			
+
 		</record>
 
-		<record model="ir.ui.view" id="upotussam_reparaciones_tree_view">
-			<field name="name">view_upotussam_reparaciones_tree</field>
-			<field name="model">upotussam.reparacionesclass</field>
+		<record model="ir.ui.view" id="upotussam_reparacion_tree_view">
+			<field name="name">view_upotussam_reparacion_tree</field>
+			<field name="model">upotussam.reparacion</field>
 			<field name="arch" type="xml">
 				<tree string="tree_string">
 					<field name="descripcion" />
@@ -33,15 +46,16 @@
 					<field name="fechaFin" />
 					<field name="garantia" />
 					<field name="autobus_id" />
+					<field name='piezas_ids'/>
+					<field name='mecanico_ids'/>
 				</tree>
 			</field>
 		</record>
 
 		<!-- Calendar View -->
-		<record model="ir.ui.view"
-			id="view_upotussam_reparaciones_calendar">
-			<field name="name">view_upotussam_reparaciones_calendar</field>
-			<field name="model">upotussam.reparacionesclass</field>
+		<record model="ir.ui.view" id="view_upotussam_reparacion_calendar">
+			<field name="name">view_upotussam_reparacion_calendar</field>
+			<field name="model">upotussam.reparacion</field>
 			<field name="type">calendar</field>
 			<field name="arch" type="xml">
 				<calendar string="Clases" color="descripcion"
@@ -55,16 +69,16 @@
 
 
 		<record model="ir.actions.act_window"
-			id="act_reparacionclass">
+			id="act_reparacion">
 			<field name="name">Reparaciones</field>
-			<field name="res_model">upotussam.reparacionesclass</field>
+			<field name="res_model">upotussam.reparacion</field>
 			<field name="view_mode">tree,form,calendar</field>
 		</record>
 
-		<menuitem name="Reparaciones" id="reparacionclass_submenu"
+		<menuitem name="Reparaciones" id="reparacion_submenu"
 			parent="upotussam" sequence="100" />
 		<menuitem name="Ver Reparaciones" id="repairs_submenu_2"
-			parent="reparacionclass_submenu" sequence="100" action="act_reparacionclass" />
+			parent="reparacion_submenu" sequence="100" action="act_reparacion" />
 	</data>
 </odoo> 
 

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="upotussam_taller_form_view">
+			<field name="name">Talleres</field>
+			<field name="model">upotussam.taller</field>
+			<field name="arch" type="xml">
+				<form string="Form of repairs">
+					<group string="repairs">
+						<group>
+							<field name="direccion" />
+							<field name='telefono'/>
+						</group>
+						<group>
+							<field name="correoElectronico" />
+						</group>
+					</group>
+				</form>
+			</field>
+			
+
+		</record>
+
+		<record model="ir.ui.view" id="upotussam_taller_tree_view">
+			<field name="name">view_upotussam_taller_tree</field>
+			<field name="model">upotussam.taller</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="direccion" />
+					<field name='telefono'/>
+					<field name="correoElectronico" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window"
+			id="act_taller">
+			<field name="name">Talleres</field>
+			<field name="res_model">upotussam.taller</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="talleres" id="taller_submenu"
+			parent="upotussam" sequence="100" />
+		<menuitem name="Ver Talleres" id="talleres_submenu_2"
+			parent="taller_submenu" sequence="100" action="act_taller" />
+	</data>
+</odoo> 
+

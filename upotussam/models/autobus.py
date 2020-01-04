@@ -13,4 +13,4 @@ class autobus(models.Model):
                                      ('repair', 'En reparación'), ],
                                      'Estado del autobús')
     driver_id =  fields.Many2one('upotussam.driver','Conductor')  
-    reparacion_id = fields.Many2one('upotussam.reparacionclass','Reparacion')  
+    reparacion_id = fields.Many2one('upotussam.reparacion','Reparacion')  

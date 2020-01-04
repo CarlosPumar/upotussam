@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="upotussam_piezas_form">
+			<field name="name">Piezas</field>
+			<field name="model">upotussam.piezas</field>
+			<field name="arch" type="xml">
+				<form string="Formulario de piezas">
+					<group string="Piezas">
+						<field name="nombre" />
+						<field name="precio" />
+						<field name="segundaMano" />
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="upotussam_piezas_tree_view">
+			<field name="name">view_tussam_piezas_tree</field>
+			<field name="model">upotussam.piezas</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="nombre" />
+					<field name="precio" />
+					<field name="segundaMano" />
+				</tree>
+			</field>
+		</record>
+		
+
+		<record id="act_piezas" model="ir.actions.act_window">
+			<field name="name">Piezas</field>
+			<field name="res_model">upotussam.piezas</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+
+		<menuitem name="Piezas" id="upotussam_piezas_submenu" parent="upotussam"
+			sequence="100" />
+		<menuitem name="Ver piezas" id="upotussam_piezas_submenu_2"
+			parent="upotussam_piezas_submenu" sequence="100" action="act_piezas" />
+	</data>
+</odoo> 

@@ -22,7 +22,7 @@
     'depends': ['base'],
 
     # always loaded
-    'data': ['views/driver_view.xml','views/autobus_view.xml','views/reparacionesclass_view.xml'], 
+    'data': ['views/driver_view.xml','views/taller_view.xml', 'views/mecanico_view.xml','views/autobus_view.xml','views/reparacion_view.xml', 'views/piezas_view.xml'], 
 
     # only loaded in demonstration mode
     'demo': ['demo/driver_demo.xml'],
