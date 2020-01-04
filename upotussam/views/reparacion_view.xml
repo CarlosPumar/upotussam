@@ -6,7 +6,19 @@
 			<field name="model">upotussam.reparacion</field>
 			<field name="arch" type="xml">
 				<form string="Form of repairs">
-					<group string="repairs">
+					<header>
+						<button name="btn_submit_to_enviado" string="Enviar"
+							type="object" class="oe_highlight" states="espera" />
+						<button name="btn_submit_to_reparacion" string="Reparar"
+							type="object" class="oe_highlight" states="enviado" />
+						<button name="btn_submit_to_finalizado" string="Finalizar reparacion"
+							type="object" class="oe_highlight" states="reparacion" />
+						<button name="btn_submit_to_cancelado" string="Cancelar"
+							type="object" class="oe_highlight" states='enviado,reparacion'/>
+							<field name='state' widget='statusbar' />
+					</header>
+					
+					<group string="Datos generales">
 						<group>
 							<field name="descripcion" />
 						</group>
@@ -15,21 +27,23 @@
 							<field name="fechaFin" />
 						</group>
 						<group>
-							<field name="garantia" />
 							<field name="autobus_id" />
-						</group>
-						<group>
-							<field name="piezas_ids" nolabel="1" colspan="4">
-								<tree>
-									<field name="nombre" />
-									<field name="precio" />
-								</tree>
-							</field>
-						</group>
-						<group>
-							<field name="mecanico_ids"/>
+							<field name='mensajeCancelacion'/>
 						</group>
 					</group>
+					
+					<notebook colspan="4">
+							<page string="Piezas">
+								<group>
+									<field name="piezas_ids" nolabel="1" colspan="4"/>
+								</group>
+							</page>
+							<page string="Mecanicos Involucrados">
+								<group>
+									<field name="mecanico_ids" nolabel="1" colspan="4"/>
+								</group>
+							</page>
+					</notebook>
 				</form>
 			</field>
 			
@@ -44,10 +58,11 @@
 					<field name="descripcion" />
 					<field name="fechaInicio" />
 					<field name="fechaFin" />
-					<field name="garantia" />
 					<field name="autobus_id" />
 					<field name='piezas_ids'/>
 					<field name='mecanico_ids'/>
+					<field name='state'/>
+					<field name='mensajeCancelacion'/>
 				</tree>
 			</field>
 		</record>
@@ -61,7 +76,6 @@
 				<calendar string="Clases" color="descripcion"
 					date_start="fechaInicio" date_stop="fechaFin" mode="month">
 					<field name="descripcion" />
-					<field name="garantia" />
 				</calendar>
 			</field>
 		</record>
