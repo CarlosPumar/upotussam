@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="upotussam_trayecto_form">
+			<field name="name">Trayectos</field>
+			<field name="model">upotussam.trayecto</field>
+			<field name="arch" type="xml">
+				<form string="Formulario de trayectos">
+					<group string="trayectos">
+						<group>
+							<field name="dias" />
+							<field name='hora_salida' widget='float_time' />
+							<field name='hora_llegada' widget='float_time' />
+						</group>
+						<group>
+							<field name="autobus_id" />
+							<field name="linea_id" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="upotussam_trayecto_tree_view">
+			<field name="name">view_tussam_trayectos_tree</field>
+			<field name="model">upotussam.trayecto</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="dias" />
+					<field name="hora_salida" />
+					<field name="hora_llegada" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- <record model="ir.ui.view" id="upotussam_trayectos_graph"> <field 
+			name="name">trayectos</field> <field name="model">upotussam.trayecto</field> 
+			<field name="arch" type="xml"> <graph string="Capacidad de cada autobús" 
+			type="bar"> <field name="matricula" type="row"/> <field name="capacidad" 
+			type="measure"/> </graph> </field> </record -->
+
+		<record id="act_trayecto" model="ir.actions.act_window">
+			<field name="name">Trayectos</field>
+			<field name="res_model">upotussam.trayecto</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+
+		<menuitem name="Trayectos" id="upotussam_trayecto_submenu"
+			parent="upotussam" sequence="100" />
+		<menuitem name="Ver trayectos"
+			id="upotussam_trayecto_submenu_2" parent="upotussam_trayecto_submenu"
+			sequence="100" action="act_trayecto" />
+	</data>
+</odoo> 

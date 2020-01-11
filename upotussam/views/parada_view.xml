@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="upotussam_parada_form">
+			<field name="name">paradas</field>
+			<field name="model">upotussam.parada</field>
+			<field name="arch" type="xml">
+				<form string="Formulario de paradas">
+					<group string="paradas">
+						<field name="nombre" />
+						<field name="localizacion" />
+						<field name="estado" />
+					</group>
+					<notebook colspan="4">
+						<page string="Lineas asignadas">
+							<group>
+								<field name="linea_ids" nolabel="1" colspan="4" />
+							</group>
+						</page>
+					</notebook>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="upotussam_parada_tree_view">
+			<field name="name">view_tussam_paradas_tree</field>
+			<field name="model">upotussam.parada</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="nombre" />
+					<field name="localizacion" />
+					<field name="estado" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- Search View -->
+		<record model="ir.ui.view" id="upotussam_parada_search_view">
+			<field name="name">view_tussam_paradas_tree</field>
+			<field name="model">upotussam.parada</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Classes">
+					<group expand="0" string="Agrupar por…">
+						<filter name="group_by_linea" string="Lineas"
+							context="{'group_by':'linea_ids'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- record model="ir.ui.view" id="upotussam_paradas_graph"> <field name="name">paradas</field> 
+			<field name="model">upotussam.parada</field> <field name="arch" type="xml"> 
+			<graph string="Capacidad de cada autobús" type="bar"> <field name="matricula" 
+			type="row" /> <field name="capacidad" type="measure" /> </graph> </field> 
+			</record -->
+
+		<record id="act_parada" model="ir.actions.act_window">
+			<field name="name">Paradas</field>
+			<field name="res_model">upotussam.parada</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+
+		<menuitem name="Paradas" id="upotussam_parada_submenu"
+			parent="upotussam" sequence="100" />
+		<menuitem name="Ver paradas" id="upotussam_parada_submenu_2"
+			parent="upotussam_parada_submenu" sequence="100" action="act_parada" />
+	</data>
+</odoo> 

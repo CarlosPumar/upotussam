@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="upotussam_linea_form">
+			<field name="name">Lineas</field>
+			<field name="model">upotussam.linea</field>
+			<field name="arch" type="xml">
+				<form string="Formulario de lineas">
+					<group string="lineas">
+						<field name="nombre" />
+						<field name="capacidad" />
+						<field name="afluencia" />
+					</group>
+					<notebook colspan="4">
+						<page string="Paradas pertenecientes">
+							<group>
+								<field name="parada_ids" nolabel="1" colspan="4" />
+							</group>
+						</page>
+					</notebook>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="upotussam_linea_tree_view">
+			<field name="name">view_tussam_lineas_tree</field>
+			<field name="model">upotussam.linea</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="nombre" />
+					<field name="capacidad" />
+					<field name="afluencia" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- Search View -->
+		<record model="ir.ui.view" id="upotussam_linea_search_view">
+			<field name="name">view_tussam_lineas_tree</field>
+			<field name="model">upotussam.linea</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Classes">
+					<group expand="0" string="Agrupar por…">
+						<filter name="group_by_parada" string="Paradas"
+							context="{'group_by':'parada_ids'}" />
+						<filter name="group_by_afluencia" string="Afluencia"
+							context="{'group_by':'afluencia'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record id="act_linea" model="ir.actions.act_window">
+			<field name="name">Lineas</field>
+			<field name="res_model">upotussam.linea</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="Lineas" id="upotussam_linea_submenu"
+			parent="upotussam" sequence="100" />
+		<menuitem name="Ver lineas" id="upotussam_linea_submenu_2"
+			parent="upotussam_linea_submenu" sequence="100" action="act_linea" />
+	</data>
+</odoo> 

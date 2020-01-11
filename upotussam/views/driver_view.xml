@@ -68,7 +68,7 @@
 		</record>
 
 		<record id="act_driver" model="ir.actions.act_window">
-			<field name="name">Upotussam Conductores</field>
+			<field name="name">Conductores</field>
 			<field name="res_model">upotussam.driver</field>
 			<field name="view_mode">tree,form</field>
 		</record>
