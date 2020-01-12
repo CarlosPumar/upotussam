@@ -46,7 +46,7 @@
 		</record>
 
 		<record id="act_mecanico" model="ir.actions.act_window">
-			<field name="name">Upotussam Mecanicos</field>
+			<field name="name">Mecanicos</field>
 			<field name="res_model">upotussam.mecanico</field>
 			<field name="view_mode">tree,form</field>
 		</record>

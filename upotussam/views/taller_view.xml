@@ -40,7 +40,7 @@
 			<field name="view_mode">tree,form</field>
 		</record>
 
-		<menuitem name="talleres" id="taller_submenu"
+		<menuitem name="Talleres" id="taller_submenu"
 			parent="upotussam" sequence="100" />
 		<menuitem name="Ver Talleres" id="talleres_submenu_2"
 			parent="taller_submenu" sequence="100" action="act_taller" />

@@ -51,5 +51,150 @@
 			<field name="carnet">00000001B</field>
 			<field name="turno">night</field>
 		</record>
+		<record id="autobus50" model="upotussam.autobus">
+			<field name="matricula">6292KPT</field>
+			<field name="capacidad">50</field>
+			<field name="estado">available</field>
+		</record>
+		<record id="autobus51" model="upotussam.autobus">
+			<field name="matricula">7612HGF</field>
+			<field name="capacidad">25</field>
+			<field name="estado">active</field>
+		</record>
+		<record id="autobus52" model="upotussam.autobus">
+			<field name="matricula">9876KTY</field>
+			<field name="capacidad">77</field>
+			<field name="estado">repair</field>
+		</record>
+		<record id="autobus53" model="upotussam.autobus">
+			<field name="matricula">3451HGT</field>
+			<field name="capacidad">55</field>
+			<field name="estado">available</field>
+		</record>
+		<record id="autobus54" model="upotussam.autobus">
+			<field name="matricula">7690MNB</field>
+			<field name="capacidad">120</field>
+			<field name="estado">available</field>
+		</record>
+		<record id="estacion50" model="upotussam.estacion">
+			<field name="nombre">San Lorenzo</field>
+			<field name="direccion">Sevilla</field>
+			<field name="capacidad">500</field>
+			<field name="plazas_disponibles">100</field>
+		</record>
+		<record id="estacion51" model="upotussam.estacion">
+			<field name="nombre">López Santiago</field>
+			<field name="direccion">Bormujos</field>
+			<field name="capacidad">400</field>
+			<field name="plazas_disponibles">50</field>
+		</record>
+		<record id="estacion52" model="upotussam.estacion">
+			<field name="nombre">Conde del lago</field>
+			<field name="direccion">Espartinas</field>
+			<field name="capacidad">230</field>
+			<field name="plazas_disponibles">110</field>
+		</record>
+		<record id="linea50" model="upotussam.linea">
+			<field name="nombre">Linea 1</field>
+			<field name="capacidad">10</field>
+			<field name="afluencia">low</field>
+		</record>
+		<record id="linea51" model="upotussam.linea">
+			<field name="nombre">Linea 2</field>
+			<field name="capacidad">30</field>
+			<field name="afluencia">high</field>
+		</record>
+		<record id="linea52" model="upotussam.linea">
+			<field name="nombre">Linea 3</field>
+			<field name="capacidad">15</field>
+			<field name="afluencia">medium</field>
+		</record>
+		<record id="parada50" model="upotussam.parada">
+			<field name="nombre">Plaza del agua</field>
+			<field name="localizacion">Tomares</field>
+			<field name="estado">available</field>
+		</record>
+		<record id="parada51" model="upotussam.parada">
+			<field name="nombre">San Benito</field>
+			<field name="localizacion">Espartinas</field>
+			<field name="estado">available</field>
+		</record>
+		<record id="parada52" model="upotussam.parada">
+			<field name="nombre">Corral</field>
+			<field name="localizacion">Bormujos</field>
+			<field name="estado">undefined</field>
+		</record>
+		<record id="pieza50" model="upotussam.piezas">
+			<field name="nombre">Rueda delantera</field>
+			<field name="precio">20</field>
+			<field name="segundaMano">yes</field>
+		</record>
+		<record id="pieza51" model="upotussam.piezas">
+			<field name="nombre">Limpiaparabrisas</field>
+			<field name="precio">15</field>
+			<field name="segundaMano">no</field>
+		</record>
+		<record id="pieza52" model="upotussam.piezas">
+			<field name="nombre">Motor</field>
+			<field name="precio">320</field>
+			<field name="segundaMano">yes</field>
+		</record>
+		<record id="taller50" model="upotussam.taller">
+			<field name="direccion">Calle Santiago de Compostela, 23</field>
+			<field name="telefono">667456789</field>
+			<field name="correoElectronico">tallerespaco@gmail.com</field>
+		</record>
+		<record id="taller51" model="upotussam.taller">
+			<field name="direccion">Calle Vicente, 6</field>
+			<field name="telefono">66667876</field>
+			<field name="correoElectronico">repuestosjavier@gmail.com</field>
+		</record>
+		<record id="mecanico50" model="upotussam.mecanico">
+			<field name="dni">00000001A</field>
+			<field name="nombre">Juan</field>
+			<field name="apellidos">Tuzri For</field>
+			<field name="mail">juan@gmail.com</field>
+			<field name="fecha_nacimiento">16/12/2000</field> 
+			<field name="tipo_contrato">part-time</field>
+			<field name="especialidad">Chapa</field>
+			<field name="centroDocente">Pablo olavide</field>
+		</record>
+		<record id="mecanico51" model="upotussam.mecanico">
+			<field name="dni">00000347s</field>
+			<field name="nombre">Jose</field>
+			<field name="apellidos">López López</field>
+			<field name="mail">jose@gmail.com</field>
+			<field name="fecha_nacimiento">01/11/1997</field> 
+			<field name="tipo_contrato">full-time</field>
+			<field name="especialidad">Ruedas</field>
+			<field name="centroDocente">Universidad de Sevilla</field>
+		</record>
+		<record id="trayecto50" model="upotussam.trayecto">
+			<field name="dias">1</field>
+			<field name="hora_salida">8.25</field>
+			<field name="hola_llegada">10:35</field>
+		</record>
+		<record id="trayecto51" model="upotussam.trayecto">
+			<field name="dias">2</field>
+			<field name="hora_salida">15.25</field>
+			<field name="hola_llegada">19:45</field>
+		</record>
+		<record id="reparacion50" model="upotussam.reparacion">
+			<field name="descripcion">Arreglo de un pinchazo en la rueda.</field>
+			<field name="fechaInicio">12/12/2019</field>
+			<field name="fechaFin">12/10/2020</field>
+			<field name="mensajeCancelacion">Cancelación aceptada.</field>
+			<field name="state">espera</field>
+			<field name="autobus_id" ref="autobus50"></field>
+		</record>
+		<record id="reparacion51" model="upotussam.reparacion">
+			<field name="descripcion">Arreglo de un cristal roto de la ventana.</field>
+			<field name="fechaInicio">16/10/2019</field>
+			<field name="fechaFin">12/12/2020</field>
+			<field name="mensajeCancelacion">Cancelación aceptada.</field>
+			<field name="state">finalizado</field>
+			<field name="autobus_id" ref="autobus50"></field>
+		</record>
+		
 	</data>
 </odoo>

@@ -14,3 +14,4 @@ class autobus(models.Model):
                                      'Estado del autobús')
     driver_id =  fields.Many2one('upotussam.driver','Conductor')  
     reparacion_id = fields.Many2one('upotussam.reparacion','Reparacion')  
+    estacion_id = fields.Many2one('upotussam.estacion', 'Estacion')
